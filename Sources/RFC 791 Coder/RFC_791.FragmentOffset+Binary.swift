@@ -1,8 +1,7 @@
-public import Binary_Serializable
+public import Binary
 public import Byte
 public import RFC_791
-import Binary_Standard_Library_Integration
-import Binary_Endianness
+import Binary
 
 extension RFC_791.FragmentOffset: @retroactive Binary.Serializable {
 

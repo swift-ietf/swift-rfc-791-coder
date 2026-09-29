@@ -1,7 +1,5 @@
 public import ASCII
-public import ASCII_Serializer
-public import Byte
-public import Parseable_ASCII
+import Byte
 public import RFC_791
 
 extension RFC_791.IPv4.Address: @retroactive ASCII.Parseable {}
