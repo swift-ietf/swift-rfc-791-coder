@@ -35,5 +35,3 @@ extension RFC_791.Identification {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.Identification: Coder.Codable {}

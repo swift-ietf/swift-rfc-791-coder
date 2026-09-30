@@ -30,5 +30,3 @@ extension RFC_791.`Protocol` {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.`Protocol`: Coder.Codable {}

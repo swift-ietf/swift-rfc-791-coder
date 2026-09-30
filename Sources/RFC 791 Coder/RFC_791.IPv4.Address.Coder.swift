@@ -39,5 +39,3 @@ extension RFC_791.IPv4.Address {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.IPv4.Address: Coder.Codable {}

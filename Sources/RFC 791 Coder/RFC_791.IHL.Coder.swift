@@ -34,5 +34,3 @@ extension RFC_791.IHL {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.IHL: Coder.Codable {}

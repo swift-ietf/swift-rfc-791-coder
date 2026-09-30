@@ -33,5 +33,3 @@ extension RFC_791.Flags {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.Flags: Coder.Codable {}

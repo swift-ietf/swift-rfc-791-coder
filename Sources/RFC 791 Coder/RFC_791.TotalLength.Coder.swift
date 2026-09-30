@@ -40,5 +40,3 @@ extension RFC_791.TotalLength {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.TotalLength: Coder.Codable {}

@@ -35,5 +35,3 @@ extension RFC_791.HeaderChecksum {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.HeaderChecksum: Coder.Codable {}

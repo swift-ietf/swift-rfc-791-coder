@@ -33,5 +33,3 @@ extension RFC_791.Precedence {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.Precedence: Coder.Codable {}

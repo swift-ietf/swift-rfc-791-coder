@@ -36,5 +36,3 @@ extension RFC_791.FragmentOffset {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_791.FragmentOffset: Coder.Codable {}
