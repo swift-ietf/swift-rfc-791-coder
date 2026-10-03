@@ -37,7 +37,6 @@ let package = Package(
                 .product(name: "Byte", package: "swift-byte"),
                 .product(name: "Coder", package: "swift-coder"),
                 .product(name: "Cursor", package: "swift-cursor"),
-                .product(name: "Cursor", package: "swift-cursor"),
                 .product(name: "Parser", package: "swift-parser"),
                 .product(name: "RFC 791", package: "swift-rfc-791"),
                 .product(name: "Serializer", package: "swift-serializer"),
