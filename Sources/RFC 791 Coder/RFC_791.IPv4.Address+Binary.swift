@@ -19,7 +19,7 @@ extension RFC_791.IPv4.Address: @retroactive Binary.Serializable {
 
 extension RFC_791.IPv4.Address {
 
-    public init<Bytes: Swift.Collection>(binary bytes: Bytes) throws(Error)
+    public init<Bytes: Swift::Collection>(binary bytes: Bytes) throws(Error)
     where Bytes.Element == Byte {
         guard bytes.count == 4 else {
             throw .invalidFormat("Expected 4 bytes, got \(bytes.count)")

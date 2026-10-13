@@ -1,7 +1,6 @@
 public import Binary
 public import Byte
 public import RFC_791
-import Binary
 
 extension RFC_791.FragmentOffset: @retroactive Binary.Serializable {
 
