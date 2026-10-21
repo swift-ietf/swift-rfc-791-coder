@@ -1,5 +1,5 @@
-public import Binary_Parseable
 public import Binary
+public import Binary_Parseable
 public import Byte
 public import RFC_791
 
@@ -26,10 +26,13 @@ extension RFC_791.IPv4.Address {
         }
 
         var iterator = bytes.makeIterator()
-        let a = iterator.next()!
-        let b = iterator.next()!
-        let c = iterator.next()!
-        let d = iterator.next()!
+        guard let a = iterator.next(),
+            let b = iterator.next(),
+            let c = iterator.next(),
+            let d = iterator.next()
+        else {
+            preconditionFailure("The source holds at least four bytes")
+        }
 
         self.init(a, b, c, d)
     }
@@ -46,10 +49,13 @@ extension RFC_791.IPv4.Address: @retroactive Binary.Parseable {
         }
 
         var iterator = source.makeIterator()
-        let a = iterator.next()!
-        let b = iterator.next()!
-        let c = iterator.next()!
-        let d = iterator.next()!
+        guard let a = iterator.next(),
+            let b = iterator.next(),
+            let c = iterator.next(),
+            let d = iterator.next()
+        else {
+            preconditionFailure("The source holds at least four bytes")
+        }
         source.removeFirst(4)
 
         return RFC_791.IPv4.Address(a, b, c, d)

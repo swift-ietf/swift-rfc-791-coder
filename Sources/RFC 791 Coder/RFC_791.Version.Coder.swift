@@ -1,15 +1,14 @@
+import Binary
 public import Byte
 public import Coder
 public import Cursor
-public import RFC_791
-import Binary
 import Parser
+public import RFC_791
 import Serializer
 
 extension RFC_791.Version {
 
     public struct Coder<Input: Cursor.`Protocol`<Byte, Never>, Buffer: RangeReplaceableCollection<Byte>>: Coding {
-
 
         public typealias Output = RFC_791.Version
 
@@ -21,7 +20,10 @@ extension RFC_791.Version {
             guard let byte = input.next() else {
                 throw .empty
             }
-            return RFC_791.Version(rawValue: byte.bitPattern >> 4)!
+            guard let version = RFC_791.Version(rawValue: byte.bitPattern >> 4) else {
+                preconditionFailure("A 4-bit value is a valid IP version")
+            }
+            return version
         }
 
         public borrowing func serialize(_ output: Output, into buffer: inout Buffer) throws(Failure) {

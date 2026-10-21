@@ -1,6 +1,6 @@
 import ASCII
-import Binary_Parseable
 import Binary
+import Binary_Parseable
 import Byte
 import RFC_791
 import RFC_791_Coder

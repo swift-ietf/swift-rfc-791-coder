@@ -1,15 +1,14 @@
+import Binary
 public import Byte
 public import Coder
 public import Cursor
-public import RFC_791
-import Binary
 import Parser
+public import RFC_791
 import Serializer
 
 extension RFC_791.FragmentOffset {
 
     public struct Coder<Input: Cursor.`Protocol`<Byte, Never>, Buffer: RangeReplaceableCollection<Byte>>: Coding {
-
 
         public typealias Output = RFC_791.FragmentOffset
 
@@ -27,7 +26,10 @@ extension RFC_791.FragmentOffset {
                 throw .insufficientBytes
             }
             let value = (UInt16(high.bitPattern) << 8 | UInt16(low.bitPattern)) & 0x1FFF
-            return RFC_791.FragmentOffset(rawValue: value)!
+            guard let offset = RFC_791.FragmentOffset(rawValue: value) else {
+                preconditionFailure("A value masked to 13 bits is a valid fragment offset")
+            }
+            return offset
         }
 
         public borrowing func serialize(_ output: Output, into buffer: inout Buffer) throws(Failure) {
